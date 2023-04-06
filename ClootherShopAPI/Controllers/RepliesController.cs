@@ -23,7 +23,7 @@ namespace ClootherShopAPI.Controllers
             var res = Array.Empty<ReplyEntity>();
 
             if (context != null)
-                res = context.Replies.OrderBy(x => x.CreatedDate).Take(5).ToArray();
+                res = context.Replies.OrderBy(x => x.ReplyDateTime).Take(5).ToArray();
 
             return Json(res);
         }

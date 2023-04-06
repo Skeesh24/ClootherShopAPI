@@ -10,7 +10,7 @@ namespace ClootherShopAPI.Domain.Entities
         public int DeliveryRate { get; set; }
         public int ServiceRate { get; set; }
         public string Username { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime ReplyDateTime { get; set; }
         public string? Comment { get; set; }
 
         // внешний ключ продукт
