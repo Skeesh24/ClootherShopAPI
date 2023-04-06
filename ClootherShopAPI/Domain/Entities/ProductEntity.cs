@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClootherShopAPI.Domain.Entities
 {
-    public class ProductEntity : BaseEntity
+    public class ProductEntity 
     {
         [Key]
         public int Id { get; set; }

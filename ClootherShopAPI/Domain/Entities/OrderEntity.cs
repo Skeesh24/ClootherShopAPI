@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClootherShopAPI.Domain.Entities
 {
-    public class OrderEntity : BaseEntity
+    public class OrderEntity
     {
         [Key]
         public int Id { get; set; }

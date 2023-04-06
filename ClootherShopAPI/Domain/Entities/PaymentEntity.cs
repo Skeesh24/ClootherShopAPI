@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClootherShopAPI.Domain.Entities
 {
-    public class PaymentEntity : BaseEntity
+    public class PaymentEntity
     {
         [Key]
         public int Id { get; set; }

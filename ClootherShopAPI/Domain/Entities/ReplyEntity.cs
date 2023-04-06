@@ -2,7 +2,7 @@
 
 namespace ClootherShopAPI.Domain.Entities
 {
-    public class ReplyEntity : BaseEntity
+    public class ReplyEntity 
     {
         [Key]
         public int Id { get; set; }
