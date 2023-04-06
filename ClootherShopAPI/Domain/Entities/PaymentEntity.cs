@@ -1,10 +1,13 @@
 ﻿using ClootherShopAPI.Domain.Enums;
 using ClootherShopAPI.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClootherShopAPI.Domain.Entities
 {
     public class PaymentEntity : BaseEntity
     {
+        [Key]
+        public int Id { get; set; }
         public int PaymentPrice { get; set; }   
         public string PaymentType { get; set; }
         public PaymentStatus PaymentStatus { get; set; }

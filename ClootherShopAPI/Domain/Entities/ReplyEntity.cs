@@ -4,6 +4,8 @@ namespace ClootherShopAPI.Domain.Entities
 {
     public class ReplyEntity : BaseEntity
     {
+        [Key]
+        public int Id { get; set; }
         public int ProductRate { get; set; }
         public int DeliveryRate { get; set; }
         public int ServiceRate { get; set; }
