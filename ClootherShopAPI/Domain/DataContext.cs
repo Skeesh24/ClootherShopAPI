@@ -19,10 +19,7 @@ namespace ClootherShopAPI.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            if (!options.IsConfigured)
-            {
-                options.UseNpgsql("Server=localhost;Port=5432;Database=CloothersDB;User Id=postgres;Password=RESTFULapi_Olymp-18$");
-            }
+            options.UseNpgsql("Server=localhost;Port=5432;Database=CloothersDB;User Id=postgres;Password=RESTFULapi_Olymp-18$");
         }
 
 
