@@ -2,30 +2,36 @@
 using ClootherShopAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ClootherShopAPI.Controllers
+namespace ClootherShopAPI.Controllers;
+
+public class RepliesController : Controller
 {
-    public class RepliesController : Controller
+    private DataContext? context;
+
+    public RepliesController(DataContext context)
     {
-        private DataContext? context;
+        this.context = context;
+    }
 
-        public RepliesController(DataContext context)
-        {
-            this.context = context;
-        }
+    [HttpPost("/reviews")]
+    public IActionResult ReplyAdd()
+    {
+        return Ok();
+    }
 
-        /// <summary>
-        /// return 5 latest replies
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("Replies/{pageId}")]
-        public IActionResult Get5LateReplies([FromRoute] int pageId)
-        {
-            var res = Array.Empty<ReplyEntity>();
+    /// <summary>
+    /// return 5 latest replies
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("Replies/{pageId}")]
+    public IActionResult Get5LateReplies([FromRoute] int pageId)
+    {
+        var res = Array.Empty<ReplyEntity>();
 
-            if (context != null)
-                res = context.Replies.OrderBy(x => x.ReplyDateTime).Take(5).ToArray();
+        // move any logic to model
+        if (context != null)
+            res = context.Replies.OrderBy(x => x.ReplyDateTime).Take(5).ToArray();
 
-            return Json(res);
-        }
+        return Json(res);
     }
 }
