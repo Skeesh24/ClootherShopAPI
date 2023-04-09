@@ -1,7 +1,7 @@
 ﻿using ClootherShopAPI.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClootherShopAPI.Domain
+namespace ClootherShopAPI.Domain.Context
 {
     public class DataContext : DbContext
     {
@@ -14,19 +14,22 @@ namespace ClootherShopAPI.Domain
         public DbSet<ProductEntity> Products { get; set; }
         public DbSet<ReplyEntity> Replies { get; set; }
 
-        public DataContext()
+        private string str;
+
+        public DataContext(string connectionString)
         {
+            str = connectionString;
         }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
             Database.EnsureCreatedAsync();
-            Database.EnsureDeletedAsync();   
-        }   
+            Database.EnsureDeletedAsync();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql("Server=localhost;Port=5432;Database=CloothersDB;User Id=postgres;Password=RESTFULapi_Olymp-18$");
+            options.UseNpgsql(str);
         }
 
 

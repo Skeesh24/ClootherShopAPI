@@ -1,4 +1,4 @@
-﻿using ClootherShopAPI.Domain;
+﻿using ClootherShopAPI.Domain.Context;
 using ClootherShopAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 
