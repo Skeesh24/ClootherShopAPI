@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClootherShopAPI", "ClootherShopAPI\ClootherShopAPI.csproj", "{FEC05E8B-0A68-46AD-8086-472420C7AB1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClootherShopAPI.WEB", "ClootherShopAPI\ClootherShopAPI.WEB.csproj", "{FEC05E8B-0A68-46AD-8086-472420C7AB1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CootherShopAPI.DAL", "CootherShopAPI.DAL\CootherShopAPI.DAL.csproj", "{2D1132C5-D92B-4F3D-B56D-EBFFC02CA2CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CootherShopAPI.DAL", "CloherShopAPI.DAL\CootherShopAPI.DAL.csproj", "{74282005-A4F5-42EB-A57F-A406FEE36DE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{FEC05E8B-0A68-46AD-8086-472420C7AB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC05E8B-0A68-46AD-8086-472420C7AB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC05E8B-0A68-46AD-8086-472420C7AB1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D1132C5-D92B-4F3D-B56D-EBFFC02CA2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D1132C5-D92B-4F3D-B56D-EBFFC02CA2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D1132C5-D92B-4F3D-B56D-EBFFC02CA2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D1132C5-D92B-4F3D-B56D-EBFFC02CA2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74282005-A4F5-42EB-A57F-A406FEE36DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74282005-A4F5-42EB-A57F-A406FEE36DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74282005-A4F5-42EB-A57F-A406FEE36DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74282005-A4F5-42EB-A57F-A406FEE36DE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
-﻿using ClootherShopAPI.Domain.Context;
-using ClootherShopAPI.Domain.Entities;
+﻿using ClootherShopAPI.DAL.Context;
+using ClootherShopAPI.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -29,8 +29,10 @@ public class RepliesController : Controller
         var res = Array.Empty<ReplyEntity>();
 
         // move any logic to model
-        if (context != null)
-            res = context.Replies.OrderBy(x => x.ReplyDateTime).Take(5).ToArray();
+        if (context is not null)
+            res = context.Replies.OrderBy(x => x.ReplyDateTime)
+                .Take(5)
+                .ToArray();
 
         return Json(res);
     }

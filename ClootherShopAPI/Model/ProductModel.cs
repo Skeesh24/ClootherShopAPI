@@ -1,5 +1,5 @@
 ﻿
-using ClootherShopAPI.Domain.ClootherSize;
+using ClootherShopAPI.DAL.Enums;
 
 namespace ClootherShopAPI.Model;
 

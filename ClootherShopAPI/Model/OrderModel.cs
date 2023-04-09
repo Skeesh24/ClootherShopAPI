@@ -1,4 +1,4 @@
-﻿using ClootherShopAPI.Domain.Enums;
+﻿using ClootherShopAPI.DAL.Enums;
 
 namespace ClootherShopAPI.Model;
 

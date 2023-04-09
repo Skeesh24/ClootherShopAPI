@@ -1,4 +1,4 @@
-using ClootherShopAPI.Domain.Context;
+using ClootherShopAPI.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
