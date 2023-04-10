@@ -1,5 +1,5 @@
 ﻿
-using ClootherShopAPI.Model;
+using ClootherShopAPI.BLL.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -45,7 +45,7 @@ public class CategoriesController : Controller
     /// <param name="categoryId"></param>
     /// <returns></returns>
     [HttpPut("/categories/{id}")]
-    public IActionResult CategoryPut([FromBody] int categoryId, CategoryModel category)
+    public IActionResult CategoryPut([FromBody] int categoryId, CategoryDTO category)
     {
         return Ok();
     }

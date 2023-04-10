@@ -1,6 +1,8 @@
 ﻿using ClootherShopAPI.DAL.Context;
 using ClootherShopAPI.DAL.Entities;
 using ClootherShopAPI.DAL.Interfaces;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ClootherShopAPI.DAL.Repositories;
 
@@ -36,6 +38,14 @@ public class ClientsRepository : IRepository<ClientEntity>
     public IEnumerable<ClientEntity>? GetAll(Func<ClientEntity, bool> predicate)
     {
         return db.Clients.Where(predicate);
+    }
+
+    public IEnumerable<ClientEntity>? GetAll()
+    {
+        var res = db.Clients.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
     }
 
     public void Update(ClientEntity item)

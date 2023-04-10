@@ -1,6 +1,6 @@
-﻿namespace ClootherShopAPI.Model
+﻿namespace ClootherShopAPI.BLL.Model
 {
-    public class UserModel
+    public class ClientDTO
     {
         public string Name { get; set; }
         public string Reference { get; set; }

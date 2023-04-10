@@ -1,5 +1,5 @@
 ﻿using ClootherShopAPI.DAL.Context;
-using ClootherShopAPI.Model;
+using ClootherShopAPI.BLL.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -20,7 +20,7 @@ public class AuthController : Controller
     /// <param name="user"></param>
     /// <returns></returns>
     [HttpPost("autth/login")]
-    public IActionResult Login([FromBody] UserModel user)
+    public IActionResult Login([FromBody] ClientDTO user)
     {
 
         return Ok();
@@ -32,7 +32,7 @@ public class AuthController : Controller
     /// <param name="user"></param>
     /// <returns></returns>
     [HttpPost("auth/signin")]
-    public IActionResult Signin([FromBody] UserModel user)
+    public IActionResult Signin([FromBody] ClientDTO user)
     {
 
         return Ok();

@@ -39,6 +39,14 @@ public class PaymentsRepository : IRepository<PaymentEntity>
         return db.Payments.Where(predicate);
     }
 
+    public IEnumerable<PaymentEntity>? GetAll()
+    {
+        var res = db.Payments.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
+    }
+
     public void Update(PaymentEntity item)
     {
         db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

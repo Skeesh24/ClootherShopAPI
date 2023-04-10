@@ -1,9 +1,9 @@
 ﻿
 using ClootherShopAPI.DAL.Enums;
 
-namespace ClootherShopAPI.Model;
+namespace ClootherShopAPI.BLL.Model;
 
-public class ProductModel
+public class ProductDTO
 {
     public int Price { get; set; }
     public bool Availability { get; set; }

@@ -1,4 +1,4 @@
-﻿using ClootherShopAPI.Model;
+﻿using ClootherShopAPI.BLL.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -43,7 +43,7 @@ public class ProductsController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPut("products/{id}")]
-    public IActionResult ProductEdit([FromBody] int productId, [FromBody] ProductModel product)
+    public IActionResult ProductEdit([FromBody] int productId, [FromBody] ProductDTO product)
     {
         return Ok();
     }

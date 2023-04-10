@@ -12,8 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CloherShopAPI.DAL\CootherShopAPI.DAL.csproj" />
-    <ProjectReference Include="..\CootherShopAPI.DAL\ClootherShopAPI.DAL.csproj" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CloothersShop.BLL\CloothersShop.BLL.csproj" />
   </ItemGroup>
 
 </Project>

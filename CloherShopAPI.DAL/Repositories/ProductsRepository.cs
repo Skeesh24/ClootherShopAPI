@@ -39,6 +39,14 @@ public class ProductsRepository : IRepository<ProductEntity>
         return db.Products.Where(predicate);
     }
 
+    public IEnumerable<ProductEntity>? GetAll()
+    {
+        var res = db.Products.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
+    }
+
     public void Update(ProductEntity item)
     {
         db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

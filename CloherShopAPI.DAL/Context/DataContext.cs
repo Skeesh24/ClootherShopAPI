@@ -16,16 +16,17 @@ namespace ClootherShopAPI.DAL.Context
 
         private string str;
 
-        public DataContext(string connectionString)
+        public DataContext(string connectionString) : base()
         {
             str = connectionString;
-        }
-
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
-        {
             Database.EnsureCreatedAsync();
             Database.EnsureDeletedAsync();
         }
+
+        //public DataContext(DbContextOptions<DataContext> options) : base(options)
+        //{
+            
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

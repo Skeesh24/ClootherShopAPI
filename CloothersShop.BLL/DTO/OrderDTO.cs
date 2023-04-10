@@ -1,8 +1,8 @@
 ﻿using ClootherShopAPI.DAL.Enums;
 
-namespace ClootherShopAPI.Model;
+namespace ClootherShopAPI.BLL.Model;
 
-public class OrderModel
+public class OrderDTO
 {
     public float OrderPrice { get; set; }
     public OrderStatus OrderStatus { get; set; }

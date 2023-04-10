@@ -1,4 +1,4 @@
-﻿using ClootherShopAPI.Model;
+﻿using ClootherShopAPI.BLL.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -45,7 +45,7 @@ public class OrdersController : Controller
     /// <param name="order"></param>
     /// <returns></returns>
     [HttpPut("/order/{id}")]
-    public IActionResult OrderPut([FromBody] int orderId, [FromBody] OrderModel order)
+    public IActionResult OrderPut([FromBody] int orderId, [FromBody] OrderDTO order)
     {
         return Ok();
     }

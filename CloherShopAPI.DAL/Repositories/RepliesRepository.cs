@@ -39,6 +39,14 @@ public class RepliesRepository : IRepository<ReplyEntity>
         return db.Replies.Where(predicate);
     }
 
+    public IEnumerable<ReplyEntity>? GetAll()
+    {
+        var res = db.Replies.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
+    }
+
     public void Update(ReplyEntity item)
     {
         db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

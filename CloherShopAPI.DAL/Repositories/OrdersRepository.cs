@@ -39,6 +39,14 @@ public class OrdersRepository : IRepository<OrderEntity>
         return db.Orders.Where(predicate);
     }
 
+    public IEnumerable<OrderEntity>? GetAll()
+    {
+        var res = db.Orders.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
+    }
+
     public void Update(OrderEntity item)
     {
         db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

@@ -1,4 +1,4 @@
-﻿using ClootherShopAPI.Model;
+﻿using ClootherShopAPI.BLL.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
@@ -35,7 +35,7 @@ public class ClientsController : Controller
     /// <param name="client"></param>
     /// <returns></returns>
     [HttpPut("/clients/{id}")]
-    public IActionResult ClientPut([FromBody] int clientId, UserModel client)
+    public IActionResult ClientPut([FromBody] int clientId, ClientDTO client)
     {
         return Ok();
     }

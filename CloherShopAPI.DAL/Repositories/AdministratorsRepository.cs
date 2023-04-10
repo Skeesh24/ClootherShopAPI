@@ -39,6 +39,14 @@ public class AdministratorsRepository : IRepository<AdministratorEntity>
         return db.Administrators.Where(predicate);
     }
 
+    public IEnumerable<AdministratorEntity>? GetAll()
+    {
+        var res = db.Administrators.ToList();
+        if (res is null)
+            throw new NullReferenceException();
+        return res;
+    }
+
     public void Update(AdministratorEntity item)
     {
         db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

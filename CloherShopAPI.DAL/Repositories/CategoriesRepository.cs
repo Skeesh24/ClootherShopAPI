@@ -39,6 +39,14 @@ namespace ClootherShopAPI.DAL.Repositories
             return db.Categories.Where(predicate);
         }
 
+        public IEnumerable<ProductCategoryEntity>? GetAll()
+        {
+            var res = db.Categories.ToList();
+            if (res is null)
+                throw new NullReferenceException();
+            return res;
+        }
+
         public void Update(ProductCategoryEntity item)
         {
             db.Entry(item).State = EntityState.Modified;
