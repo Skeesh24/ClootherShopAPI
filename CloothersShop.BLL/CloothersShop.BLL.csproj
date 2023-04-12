@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="BuisnessModels\" />
-    <Folder Include="Infrastructure\" />
   </ItemGroup>
 
   <ItemGroup>

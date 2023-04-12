@@ -1,10 +1,20 @@
-﻿using ClootherShopAPI.BLL.Model;
+﻿using AutoMapper;
+using ClootherShopAPI.BLL.Model;
+using ClootherShopAPI.DAL.Entities;
+using CloothersShopAPI.BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClootherShopAPI.Controllers;
 
 public class ClientsController : Controller
 {
+    IClientService _clientService;
+
+    public ClientsController(IClientService clientService)
+    {
+        this._clientService = clientService;
+    }
+
 
 
     /// <summary>
@@ -14,7 +24,11 @@ public class ClientsController : Controller
     [HttpGet("/clients")]
     public IActionResult Clients()
     {
-        return Ok();
+        Response.StatusCode = 200;
+        var clientsDTO = _clientService.GetClients();
+        var mapper = new MapperConfiguration(cfg => cfg.CreateMap<ClientDTO, ClientEntity>()).CreateMapper();
+        var clients = mapper.Map<IEnumerable<ClientDTO>, List<ClientEntity>>(_clientService.GetClients());
+        return Json(clients);
     }
 
     /// <summary>

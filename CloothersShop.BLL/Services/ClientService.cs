@@ -3,12 +3,12 @@ using AutoMapper;
 using ClootherShopAPI.BLL.Model;
 using ClootherShopAPI.DAL.Entities;
 using ClootherShopAPI.DAL.Interfaces;
-using CloothersShop.BLL.Interfaces;
+using CloothersShopAPI.BLL.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace CloothersShop.BLL.Services;
+namespace CloothersShopAPI.BLL.Services;
 
-public class ClientService : ICientService
+public class ClientService : IClientService
 {
     public IUnitOfWork Database { get; set; }
 
@@ -55,15 +55,38 @@ public class ClientService : ICientService
     public IEnumerable<ClientDTO> GetClients()
     {
         var mapper = new MapperConfiguration(conf => conf.CreateMap<ClientEntity, ClientDTO>()).CreateMapper();
-        var res = mapper.Map<IEnumerable<ClientEntity>, List<ClientDTO>>(Database.Clients.GetAll());
+        var listForMap = Database.Clients.GetAll();
+
+        if (listForMap == null)
+            throw new NullReferenceException();
+        
+        var res = mapper.Map<IEnumerable<ClientEntity>, List<ClientDTO>>(listForMap);
+        
         if (res is null)
             throw new NullReferenceException();
+        
+        return res;
+    }
+
+    public IEnumerable<ClientDTO> GetClients(Func<ClientEntity, Boolean> predicate)
+    {
+        var mapper = new MapperConfiguration(conf => conf.CreateMap<ClientEntity, ClientDTO>()).CreateMapper();
+        var listForMap = Database.Clients.GetAll(predicate);
+
+        if (listForMap == null)
+            throw new NullReferenceException();
+
+        var res = mapper.Map<IEnumerable<ClientEntity>, List<ClientDTO>>(listForMap);
+
+        if (res == null)
+            throw new NullReferenceException();
+
         return res;
     }
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+        Database.Dispose();
     }
 
 }
