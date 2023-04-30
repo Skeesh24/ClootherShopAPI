@@ -23,7 +23,7 @@ public class OrdersController : Controller
     /// <param name="orderId"></param>
     /// <returns></returns>
     [HttpGet("/order/{id}")]
-    public IActionResult OrderById([FromBody] int orderId)
+    public IActionResult OrderById([FromRoute] int orderId)
     {
         return Ok();
     }
@@ -45,7 +45,7 @@ public class OrdersController : Controller
     /// <param name="order"></param>
     /// <returns></returns>
     [HttpPut("/order/{id}")]
-    public IActionResult OrderPut([FromBody] int orderId, [FromBody] OrderModel order)
+    public IActionResult OrderPut([FromRoute] int orderId, [FromBody] OrderModel order)
     {
         return Ok();
     }
@@ -55,7 +55,7 @@ public class OrdersController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpDelete("/order/{id}")]
-    public IActionResult OrderDelete([FromBody] int orderId)
+    public IActionResult OrderDelete([FromRoute] int orderId)
     {
         return NoContent();
     }

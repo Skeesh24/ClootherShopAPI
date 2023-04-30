@@ -43,7 +43,7 @@ public class ProductsController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPut("products/{id}")]
-    public IActionResult ProductEdit([FromBody] int productId, [FromBody] ProductModel product)
+    public IActionResult ProductEdit([FromRoute] int productId, [FromBody] ProductModel product)
     {
         return Ok();
     }
@@ -54,7 +54,7 @@ public class ProductsController : Controller
     /// <param name="productId"></param>
     /// <returns></returns>
     [HttpDelete("products/{id}")]
-    public IActionResult ProductDelete(int productId)
+    public IActionResult ProductDelete([FromRoute] int productId)
     {
         return NoContent();
     }

@@ -35,7 +35,7 @@ public class ClientsController : Controller
     /// <param name="client"></param>
     /// <returns></returns>
     [HttpPut("/clients/{id}")]
-    public IActionResult ClientPut([FromBody] int clientId, UserModel client)
+    public IActionResult ClientPut([FromRoute] int clientId, [FromBody] UserModel client)
     {
         return Ok();
     }
@@ -46,7 +46,7 @@ public class ClientsController : Controller
     /// <param name="clientId"></param>
     /// <returns></returns>
     [HttpDelete("/clients/{id}")]
-    public IActionResult ClientDelete([FromBody] int clientId)
+    public IActionResult ClientDelete([FromRoute] int clientId)
     {
         return NoContent();
     }

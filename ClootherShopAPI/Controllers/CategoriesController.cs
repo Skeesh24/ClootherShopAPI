@@ -46,7 +46,7 @@ public class CategoriesController : Controller
     /// <param name="categoryId"></param>
     /// <returns></returns>
     [HttpPut("/categories/{id}")]
-    public IActionResult CategoryPut([FromBody] int categoryId, CategoryModel category)
+    public IActionResult CategoryPut([FromRoute] int categoryId, [FromBody] CategoryModel category)
     {
         return Ok();
     }
@@ -57,7 +57,7 @@ public class CategoriesController : Controller
     /// <param name="categoryId"></param>
     /// <returns></returns>
     [HttpDelete("/categories/{if}")]
-    public IActionResult CategoryDelete([FromBody] int categoryId)
+    public IActionResult CategoryDelete([FromRoute] int categoryId)
     {
         return NoContent();
     }

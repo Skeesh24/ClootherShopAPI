@@ -9,7 +9,6 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddMvc();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthorization();
@@ -29,6 +28,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapGet("/clients/{id}", (HttpContext context, [FromRoute] int id) => $"Hello, world {id}");
+app.MapDefaultControllerRoute();
 
 app.Run();
