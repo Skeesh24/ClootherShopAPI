@@ -10,7 +10,7 @@ namespace ClootherShopAPI.Domain
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PaymentEntity> Payments { get; set; }
         public DbSet<AdministratorEntity> Administrators { get; set; }
-        public DbSet<ProductCategoryEntity> Categories { get; set; }
+        public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<ProductEntity> Products { get; set; }
         public DbSet<ReplyEntity> Replies { get; set; }
 
@@ -26,7 +26,11 @@ namespace ClootherShopAPI.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql("Server=localhost;Port=5432;Database=CloothersDB;User Id=postgres;Password=RESTFULapi_Olymp-18$");
+            var str = new ConfigurationManager()
+                .AddJsonFile("appsettings.json")
+                .Build()
+                .GetConnectionString("DefaultConnection");
+            options.UseNpgsql(str);
         }
 
 

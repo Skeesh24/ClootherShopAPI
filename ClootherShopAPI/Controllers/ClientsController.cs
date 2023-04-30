@@ -23,7 +23,7 @@ public class ClientsController : Controller
     /// <param name="clientId"></param>
     /// <returns></returns>
     [HttpGet("/clients/{id}")]
-    public IActionResult ClientById([FromBody] int clientId)
+    public IActionResult ClientById([FromRoute] int clientId)
     {
         return Ok();
     }

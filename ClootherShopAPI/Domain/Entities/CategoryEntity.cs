@@ -2,7 +2,7 @@
 
 namespace ClootherShopAPI.Domain.Entities
 {
-    public class ProductCategoryEntity
+    public class CategoryEntity
     {
         [Key]
         public int Id { get; set; }

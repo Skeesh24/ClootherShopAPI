@@ -2,8 +2,8 @@
 {
     public enum SecurityLevel
     {
-        moderator,
-        administrator,
-        owner
+        Moderator,
+        Administrator,
+        Owner
     }
 }
